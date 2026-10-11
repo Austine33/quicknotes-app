@@ -112,3 +112,11 @@ searchInput.addEventListener("input", render);
 
 loadNotes();
 render();
+   const clearAllBtn = document.querySelector("#clear-all-btn");
+   clearAllBtn.addEventListener("click", function () {
+     if (confirm("Delete all notes?")) {
+       notes = [];
+       saveNotes();
+       render();
+     }
+   });
